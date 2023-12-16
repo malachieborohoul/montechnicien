@@ -41,12 +41,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Container(
                         width: size.width,
-                        height: 20,
+                        height: 50,
                         color: primary,
                         child: Center(
                           child: Text(
                             "CONNEXION",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
                       )
