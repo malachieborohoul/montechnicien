@@ -125,10 +125,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                             });
                                           },
                                           items: <String>[
-                                            'Apple',
-                                            'Mango',
-                                            'Banana',
-                                            'Peach'
+                                            'Admaoua',
+                                            'Centre',
+                                            'Est',
+                                            'Extrême-Nord'
+                                                'Littoral'
+                                                'Nord',
+                                            'Nord-Ouest',
+                                            'Ouest',
+                                            'Sud',
+                                            'Sud-Ouest',
                                           ].map<DropdownMenuItem<String>>(
                                               (String value) {
                                             return DropdownMenuItem<String>(
