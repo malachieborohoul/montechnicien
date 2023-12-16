@@ -17,7 +17,43 @@ class _LoginScreenState extends State<LoginScreen> {
     final size = MediaQuery.of(context).size;
 
     return Material(
-      color: Colors.transparent,
-    );
+        color: Colors.black.withOpacity(0.2),
+        child: Stack(
+          children: [
+            Positioned.fill(
+                child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                color: Colors.black26,
+              ),
+            )),
+            Positioned(
+                top: size.height / 2 - (size.height * .5) / 2,
+                left: 10,
+                right: 10,
+                child: Container(
+                  // width: 100,
+                  height: size.height * .5,
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: size.width,
+                        height: 20,
+                        color: primary,
+                        child: Center(
+                          child: Text(
+                            "CONNEXION",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ))
+          ],
+        ));
   }
 }

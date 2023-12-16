@@ -461,15 +461,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             children: [
                               InkWell(
-                                hoverColor: isHover ? textGrey : primary,
-                                focusColor: textGrey,
-                                highlightColor: textGrey,
-                                splashColor: textGrey,
-                                onHover: (hov) {
-                                  setState(() {
-                                    isHover = true;
-                                  });
-                                },
                                 onTap: () {
                                   Navigator.push(
                                       context,
