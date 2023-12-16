@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     String? dropdownValue;
+    bool isHover = false;
 
     return Scaffold(
       appBar: AppBar(
@@ -458,30 +459,44 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Row(
                             children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15, vertical: 10),
-                                decoration: const BoxDecoration(
-                                    color: primary,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10))),
-                                child: const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Connexion",
-                                      style: TextStyle(color: textWhite),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Icon(
-                                      Icons.lock,
-                                      color: textWhite,
-                                      size: 15,
-                                    )
-                                  ],
+                              InkWell(
+                                hoverColor: isHover ? textGrey : primary,
+                                focusColor: textGrey,
+                                highlightColor: textGrey,
+                                splashColor: textGrey,
+                                onHover: (hov) {
+                                  setState(() {
+                                    isHover = true;
+                                  });
+                                },
+                                onTap: () {
+                                  print("object");
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15, vertical: 10),
+                                  decoration: const BoxDecoration(
+                                      color: primary,
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10))),
+                                  child: const Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Connexion",
+                                        style: TextStyle(color: textWhite),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Icon(
+                                        Icons.lock,
+                                        color: textWhite,
+                                        size: 15,
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                               const SizedBox(
