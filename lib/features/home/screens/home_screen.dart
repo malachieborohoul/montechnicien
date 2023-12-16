@@ -225,6 +225,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                     ),
+                                    Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 15, vertical: 10),
+                                        decoration: const BoxDecoration(
+                                            color: secondary,
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10))),
+                                        child: Center(
+                                            child: Icon(
+                                          Icons.search,
+                                          color: textWhite,
+                                        ))),
                                   ],
                                 ),
                               ],
