@@ -168,6 +168,41 @@ class _HomeScreenState extends State<HomeScreen> {
                                             border: OutlineInputBorder(),
                                           ),
                                           elevation: 0,
+                                          hint: const Text('Commune'),
+                                          value: dropdownValue,
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              dropdownValue = newValue!;
+                                            });
+                                          },
+                                          items: <String>[
+                                            'Apple',
+                                            'Mango',
+                                            'Banana',
+                                            'Peach'
+                                          ].map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 180,
+                                      // decoration: BoxDecoration(
+                                      //     // border: Border.all(color: textGrey),
+                                      //     borderRadius: BorderRadius.all(
+                                      //         Radius.circular(10))),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                            border: OutlineInputBorder(),
+                                          ),
+                                          elevation: 0,
                                           hint: const Text('Quartier/Ville'),
                                           value: dropdownValue,
                                           onChanged: (String? newValue) {
