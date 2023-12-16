@@ -38,17 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
             bottom: 0,
             top: size.height * .13,
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Padding(
-                padding: EdgeInsets.all(appPadding),
+                padding: const EdgeInsets.all(appPadding),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: miniSpacer,
                       ),
 
-                      Column(
+                      const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -69,18 +69,35 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
 
-                      SizedBox(
+                      const SizedBox(
                         height: spacer,
                       ),
 
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            decoration:
-                                BoxDecoration(color: textGrey.withOpacity(0.2)),
-                            child: Text("Formulaire de recherche"),
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: spacer,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(3),
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8)),
+                                    color: textGrey.withOpacity(0.2)),
+                                child: const Text("Formulaire de recherche"),
+                              ),
+                            ],
                           ),
                           Container(
+                            width: size.width * .65,
+                            height: 100,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
                             child: Column(
                               children: [
                                 Row(
@@ -232,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: secondary,
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(10))),
-                                        child: Center(
+                                        child: const Center(
                                             child: Icon(
                                           Icons.search,
                                           color: textWhite,
