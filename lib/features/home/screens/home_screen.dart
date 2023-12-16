@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:montechnicien/constants/color.dart';
 import 'package:montechnicien/constants/padding.dart';
+import 'package:montechnicien/features/auth/screens/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/home';
@@ -470,7 +471,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   });
                                 },
                                 onTap: () {
-                                  print("object");
+                                  Navigator.push(
+                                      context,
+                                      PageRouteBuilder(
+                                          opaque: false,
+                                          pageBuilder: (context, animation, _) {
+                                            return LoginScreen();
+                                          }));
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
