@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:montechnicien/constants/color.dart';
 import 'package:montechnicien/constants/padding.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const routeName = '/home';
 
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    String? dropdownValue;
 
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             right: 0,
             bottom: 0,
             top: size.height * .13,
-            child: const SingleChildScrollView(
+            child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Padding(
                 padding: EdgeInsets.all(appPadding),
@@ -42,9 +48,154 @@ class HomeScreen extends StatelessWidget {
                         height: miniSpacer,
                       ),
 
-                      Text(
-                        "Plateforme numérique de suivi géolocalisé des techniciens au Cameroun",
-                        style: TextStyle(fontSize: 100, color: primary),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Plateforme numérique de suivi géolocalisé",
+                            style: TextStyle(
+                                fontSize: 30,
+                                color: primary,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "des techniciens au Cameroun",
+                            style: TextStyle(
+                                fontSize: 30,
+                                color: primary,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(
+                        height: spacer,
+                      ),
+
+                      Column(
+                        children: [
+                          Container(
+                            decoration:
+                                BoxDecoration(color: textGrey.withOpacity(0.2)),
+                            child: Text("Formulaire de recherche"),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 180,
+                                      // decoration: BoxDecoration(
+                                      //     // border: Border.all(color: textGrey),
+                                      //     borderRadius: BorderRadius.all(
+                                      //         Radius.circular(10))),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                            border: OutlineInputBorder(),
+                                          ),
+                                          elevation: 0,
+                                          hint: const Text('Région'),
+                                          value: dropdownValue,
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              dropdownValue = newValue!;
+                                            });
+                                          },
+                                          items: <String>[
+                                            'Apple',
+                                            'Mango',
+                                            'Banana',
+                                            'Peach'
+                                          ].map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 180,
+                                      // decoration: BoxDecoration(
+                                      //     // border: Border.all(color: textGrey),
+                                      //     borderRadius: BorderRadius.all(
+                                      //         Radius.circular(10))),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                            border: OutlineInputBorder(),
+                                          ),
+                                          elevation: 0,
+                                          hint: const Text('Département'),
+                                          value: dropdownValue,
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              dropdownValue = newValue!;
+                                            });
+                                          },
+                                          items: <String>[
+                                            'Apple',
+                                            'Mango',
+                                            'Banana',
+                                            'Peach'
+                                          ].map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 180,
+                                      // decoration: BoxDecoration(
+                                      //     // border: Border.all(color: textGrey),
+                                      //     borderRadius: BorderRadius.all(
+                                      //         Radius.circular(10))),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                            border: OutlineInputBorder(),
+                                          ),
+                                          elevation: 0,
+                                          hint: const Text('Quartier/Ville'),
+                                          value: dropdownValue,
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              dropdownValue = newValue!;
+                                            });
+                                          },
+                                          items: <String>[
+                                            'Apple',
+                                            'Mango',
+                                            'Banana',
+                                            'Peach'
+                                          ].map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
                       )
                       // if (isBookLoaded) ...[
                       //   // Caches
