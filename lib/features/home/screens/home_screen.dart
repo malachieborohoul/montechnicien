@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-// Formul 
+// Formu 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
