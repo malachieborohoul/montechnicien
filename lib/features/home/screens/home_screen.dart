@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                           Container(
-                            width: size.width * .65,
+                            width: size.width * .8,
                             height: 100,
                             decoration: const BoxDecoration(
                                 color: Colors.white,
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Row(
                                   children: [
                                     Container(
-                                      width: 180,
+                                      width: 250,
                                       // decoration: BoxDecoration(
                                       //     // border: Border.all(color: textGrey),
                                       //     borderRadius: BorderRadius.all(
